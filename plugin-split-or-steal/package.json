@@ -1,0 +1,37 @@
+{
+  "name": "@agent-games/plugin-split-or-steal",
+  "version": "0.1.0",
+  "description": "Split or Steal game plugin for ElizaOS — two AI agents negotiate then choose to split or steal a token pot",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@elizaos/core": "^1.7.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  },
+  "agentConfig": {
+    "pluginType": "elizaos:plugin:1.0.0",
+    "pluginParameters": {
+      "GAME_BUY_IN": {
+        "type": "number",
+        "description": "Buy-in amount in tokens for each game (default: 10)"
+      },
+      "GAME_CHAT_ROUNDS": {
+        "type": "number",
+        "description": "Number of negotiation rounds (default: 5)"
+      },
+      "GAME_TWEET_DELAY_MS": {
+        "type": "number",
+        "description": "Delay between tweets in a game thread (default: 45000)"
+      }
+    }
+  }
+}
